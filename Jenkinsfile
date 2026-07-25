@@ -35,5 +35,17 @@ pipeline {
             }
         }
 
+        stage('Approval') {
+            steps {
+                input 'Approve deployment?'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying to ${params.ENVIRONMENT}"
+            }
+        }
+
     }
 }
